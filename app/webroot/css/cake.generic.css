@@ -23,19 +23,18 @@
 
 /** General Style Info **/
 body {
-	background: #003d4c;
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
 	margin: 0;
 }
 a {
-	color: #003d4c;
+	color: #699B0C;
 	text-decoration: underline;
 	font-weight: bold;
 }
 a:hover {
-	color: #367889;
+	color: #B8DF17;
 	text-decoration:none;
 }
 a img {

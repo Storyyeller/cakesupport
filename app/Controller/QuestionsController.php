@@ -27,8 +27,13 @@ class QuestionsController extends AppController {
         $this->Session->setFlash('This post does not belong to you');
         $this->redirect(array('action' => 'view', $id));
       } else {
-        $this->Session->setFlash('Post deleted');
-        $this->redirect('/');
+        if($this->Question->delete($id)) {
+          $this->Session->setFlash('Post deleted');
+          $this->redirect('/');
+        } else {
+          $this->Session->setFlash('There was a problem deleting this post');
+          $this->redirect(array('action' => 'view', $id));
+        }
       }
     } else {
       $this->Session->setFlash('No such question exists');

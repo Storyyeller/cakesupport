@@ -7,7 +7,12 @@ by: <?php echo $question['User']['username']; ?>
 <?php echo $question['Question']['body']; ?>
 
 <div style="text-align: right">
-<?php echo $this->Html->Link('Delete Post', array('action' => 'remove', $question['Question']['id'])); ?>
+<?php 
+  if($this->Session->read('User.id') == $question['User']['id']) {
+    echo $this->Html->Link('Delete Post',
+        array('action' => 'remove', $question['Question']['id']));
+  }
+?>
 </div>
 
 </div>

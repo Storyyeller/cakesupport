@@ -39,8 +39,8 @@
   <div id="container">                                                           
     <div id="header">                                                            
       <div id="userinfo">                                                        
-      <?php if($_SESSION['uid']) { ?>
-      Welcome <?php echo $_SESSION['username']; ?>
+      <?php if(CakeSession::read('User.username')) { ?>
+      Welcome <?php echo CakeSession::read('User.username') ?>
       [<a href="/logout">Logout</a>]
       <?php } else { ?>
       <a href="/login">Login</a>

@@ -58,11 +58,8 @@ ul#nav>li>a {
   padding: 0px 20px;
   font-weight: bold;
   font-variant: small-caps;
-  background-color: #611;
+  background-color: #161;
   display: block;
-}
-
-ul#nav>li>a:hover {
   text-decoration: none;
 }
 

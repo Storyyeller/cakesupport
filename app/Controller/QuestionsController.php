@@ -6,7 +6,7 @@ class QuestionsController extends AppController {
 
   public function index() {
     $this->set('questions', $this->Question->find('all',
-            array('order' => array('id desc')));
+      array('order' => 'id desc')));
   }
 
   public function view($id = null) {

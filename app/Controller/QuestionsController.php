@@ -24,7 +24,7 @@ class QuestionsController extends AppController {
     } else {
       if($this->request->is('post')) {
         print_r($this->request->data);
-        $this->request->data['Question']['poster'] = $this->Session->read('uid');
+        $this->request->data['Question']['poster'] = $this->Session->read('User.uid');
         if($this->Question->save($this->request->data)) {
           $this->Session->setFlash('Your question has been added');
           $this->redirect('/');

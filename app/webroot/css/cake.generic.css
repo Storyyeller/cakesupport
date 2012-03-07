@@ -309,7 +309,9 @@ form div.submit {
 	margin-top: 10px;
 }
 label {
-	display: block;
+  width: 200px;
+  text-align: right;
+  padding-right: 20px;
 	font-size: 110%;
 	margin-bottom:3px;
 }
@@ -318,7 +320,6 @@ input, textarea {
 	font-size: 140%;
 	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
 	padding: 1%;
-	width:98%;
 }
 select {
 	clear: both;

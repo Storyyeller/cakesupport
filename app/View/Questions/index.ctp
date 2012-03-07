@@ -1,16 +1,16 @@
-<h1>Questions</h1>
-
+<br />
 <?php echo $this->Html->link('Post a Question', array('action' => 'add')); ?>
+
 <table>
 <tr>
-<th>Id</th>
+<th>Poster</th>
 <th>Title</th>
-<th>Created</th>
+<th>Posted</th>
 </tr>
 
 <?php foreach ($questions as $q): ?>
 <tr>
-<td><?php echo $q['Question']['id']; ?></td>
+<td><?php echo $users[$q['Question']['poster']]['User']['username']; ?></td>
 <td>
 <?php echo $this->Html->link($q['Question']['title'],
     array('controller'  => 'questions', 'action' => 'view',

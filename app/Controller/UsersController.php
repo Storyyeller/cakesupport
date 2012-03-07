@@ -7,13 +7,16 @@ class UsersController extends AppController {
     if ($this->request->is('post')) {
       $user = $this->User->findByUsername($this->request->data['User']['username']);
       $hash = hash("sha256", $this->request->data['User']['password']);
-      echo $hash;
       if($user && $user['User']['password'] == $hash) {
-        redirect('/');
+        $this->Session->write('uid', $user['User']['uid']);
+        $this->redirect('/');
       } else {
         $this->Session->setFlash("Incorrect login attempt");
       }
     }
+  }
+
+  private function verify($user) {
   }
 
   public function register() {
@@ -22,9 +25,15 @@ class UsersController extends AppController {
         $this->request->data['User']['password']);
 
       if ($this->User->save($this->request->data)) {
+        login();
         $this->redirect('/');
       }
     }
+  }
+
+  public function logout() {
+    $this->Session->delete('uid');
+    $this->redirect('/');
   }
 
 }

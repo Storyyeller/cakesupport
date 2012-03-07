@@ -40,7 +40,7 @@
     <div id="header">                                                            
       <div id="userinfo">                                                        
       <?php if($this->Session->read('uid')) { ?>
-      Welcome <?php echo $this->Session->read('uid') ?>
+      Welcome <?php echo CakeSession::read('username') ?>
       [<a href="/logout">Logout</a>]
       <?php } else { ?>
       <a href="/login">Login</a>

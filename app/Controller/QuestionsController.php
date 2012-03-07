@@ -11,7 +11,12 @@ class QuestionsController extends AppController {
 
   public function view($id = null) {
     $this->Question->id = $id;
-    $this->set('question', $this->Question->read());
+    $q = $this->Question->read();
+    $this->set('question', $q);
+    if($q == null) {
+      $this->Session->setFlash('That question does not exist or has been deleted');
+      $this->redirect('/');
+    }
   }
 
   public function remove($id = null) {
@@ -20,7 +25,7 @@ class QuestionsController extends AppController {
     if($q) {
       if($q['User']['id'] != $this->Session->read('User.id')) {
         $this->Session->setFlash('This post does not belong to you');
-        $this->redirect(array('action' => 'view'));
+        $this->redirect(array('action' => 'view', $id));
       } else {
         $this->Session->setFlash('Post deleted');
         $this->redirect('/');

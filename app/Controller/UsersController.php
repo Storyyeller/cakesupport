@@ -26,7 +26,7 @@ class UsersController extends AppController {
         $this->request->data['User']['password']);
 
       if ($this->User->save($this->request->data)) {
-        login();
+        $this->login();
         $this->redirect('/');
       }
     }

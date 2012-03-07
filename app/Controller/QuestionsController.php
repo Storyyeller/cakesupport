@@ -20,7 +20,7 @@ class QuestionsController extends AppController {
     if($q) {
       if($q['User']['id'] != $this->Session->read('User.id')) {
         $this->Session->setFlash('This post does not belong to you');
-        $this->redirect(array('action' => 'view');
+        $this->redirect(array('action' => 'view'));
       } else {
         $this->Session->setFlash('Post deleted');
         $this->redirect('/');

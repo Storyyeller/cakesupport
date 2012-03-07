@@ -7,7 +7,7 @@ by: <?php echo $question['User']['username']; ?>
 <?php echo $question['Question']['body']; ?>
 
 <div style="text-align: right">
-<?php echo $this->Html->Link('Delete Post', array(action=>'delete')); ?>
+<?php echo $this->Html->Link('Delete Post', array('action' => 'remove', $question['Question']['id'])); ?>
 </div>
 
 </div>

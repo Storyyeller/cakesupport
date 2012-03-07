@@ -7,10 +7,11 @@ class UsersController extends AppController {
     if ($this->request->is('post')) {
       $user = $this->User->findByUsername($this->request->data['User']['username']);
       $hash = hash("sha256", $this->request->data['User']['password']);
+      echo $hash;
       if($user && $user['User']['password'] == $hash) {
         redirect('/');
       } else {
-        $this->setFlash("Incorrect login attempt");
+        $this->Session->setFlash("Incorrect login attempt");
       }
     }
   }

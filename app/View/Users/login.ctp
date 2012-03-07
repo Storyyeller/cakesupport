@@ -3,7 +3,7 @@
   echo $this->Html->link('Need to register?', array('action' => 'register'));
   echo "<br /><br />";
 
-  echo $this->Form->create('Login', array('action' => 'login'));
+  echo $this->Form->create('User', array('action' => 'login'));
 
   echo $this->Form->input('username');
   echo "<br />";

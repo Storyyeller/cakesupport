@@ -43,6 +43,13 @@
       |                                                                          
       <?php echo $this->Html->link('Sign Up', '/register'); ?>
       </div>                                                                     
+    <ul id="nav">
+      <li class="spacer"></li>
+      <li><a href='/blog'>Blog</a></li>
+      <li><a href='/questions'>Questions</a></li>
+      <li><a href='/testimonials'>Testimonials</a></li>
+      <li><a href='/faq'>F.A.Q</a></li>
+    </ul>
     </div>                                                                       
     <div id="content">                                                           
       <?php echo $this->Session->flash(); ?>                                     

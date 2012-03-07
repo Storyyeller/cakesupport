@@ -11,6 +11,7 @@ by: <?php echo $question['User']['username']; ?>
   if($this->Session->read('User.id') == $question['User']['id']) {
     echo $this->Html->Link('Edit Post',
         array('action' => 'edit', $question['Question']['id']));
+    echo " | ";
     echo $this->Html->Link('Delete Post',
         array('action' => 'remove', $question['Question']['id']));
   }

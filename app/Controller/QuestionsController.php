@@ -27,10 +27,6 @@ class QuestionsController extends AppController {
     }
     if($this->request->is('get')) {
       $this->request->data = $this->Question->read();
-      if($q == null) {
-        $this->Session->setFlash('That question does not exist or has been deleted');
-        $this->redirect('/');
-      }
     } else {
       if($this->Question->save($this->request->data)) {
         $this->Session->setFlash('Your post has been updated');

@@ -11,11 +11,7 @@ class QuestionsController extends AppController {
 
   public function view($id = null) {
     $this->Question->id = $id;
-    $q = $this->Question->read();
-    $cond = array('condition' => array('User.id' => $q['Question']['user_id']));
-
-    $this->set('question', $q);
-    $this->set('user', $this->User->find('first', $cond));
+    $this->set('question', $this->Question->read());
   }
 
   public function add() {

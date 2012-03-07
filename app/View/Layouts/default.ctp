@@ -29,6 +29,7 @@
 
 		echo $this->Html->css('cake.generic');
     echo $this->Html->css('header');                                             
+    echo $this->Html->css('elements');                                             
                                                                                  
     echo $this->fetch('meta');                                                   
     echo $this->fetch('css');                                                    

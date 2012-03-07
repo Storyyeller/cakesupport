@@ -80,4 +80,11 @@ class DATABASE_CONFIG {
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
+	
+	var $gmmBlogFeed = array(
+		'datasource' => 'rss',
+		'feedUrl' => 'http://blog.goodmeasuremeals.com/?feed=rss2',
+		'encoding' => 'UTF-8',
+		'cacheTime' => '+1 day',
+	);
 }

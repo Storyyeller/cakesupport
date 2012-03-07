@@ -8,7 +8,7 @@ class UsersController extends AppController {
       $user = $this->User->findByUsername($this->request->data['User']['username']);
       $hash = hash("sha256", $this->request->data['User']['password']);
       if($user && $user['User']['password'] == $hash) {
-        CakeSession::write('User.uid', $user['User']['uid']);
+        CakeSession::write('User.id', $user['User']['id']);
         CakeSession::write('User.username', $user['User']['username']);
         $this->redirect('/');
       } else {

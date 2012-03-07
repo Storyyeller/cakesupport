@@ -10,7 +10,7 @@
 
 <?php foreach ($questions as $q): ?>
 <tr>
-<td><?php echo $users[$q['Question']['poster']]['User']['username']; ?></td>
+<td><?php echo $q['User']['username']; ?></td>
 <td>
 <?php echo $this->Html->link($q['Question']['title'],
     array('controller'  => 'questions', 'action' => 'view',

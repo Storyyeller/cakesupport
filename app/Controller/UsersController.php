@@ -8,8 +8,8 @@ class UsersController extends AppController {
       $user = $this->User->findByUsername($this->request->data['User']['username']);
       $hash = hash("sha256", $this->request->data['User']['password']);
       if($user && $user['User']['password'] == $hash) {
-        CakeSession::write('User.uid', $user['User']['uid']);
-        CakeSession::write('User.username', $user['User']['username']);
+        $_SESSION['uid'] = $user['User']['uid'];
+        $_SESSION['username'] = $user['User']['username'];
         $this->redirect('/');
       } else {
         $this->Session->setFlash("Incorrect login attempt");
@@ -33,7 +33,8 @@ class UsersController extends AppController {
   }
 
   public function logout() {
-    CakeSession::delete('User');
+    $_SESSION['uid'] = null;
+    $_SESSION['username'] = null;
     $this->redirect('/');
   }
 

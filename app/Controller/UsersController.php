@@ -4,15 +4,15 @@ class UsersController extends AppController {
   public $helpers = array('Form', 'Html');
 
   public function login() {
-  }
-
-  public function login_user() {
+    if ($this->request->is('post')) {
+      #TODO: Login Validation
+    }
   }
 
   public function register() {
     if ($this->request->is('post')) {
-      print_r($this->request->data);
       if ($this->User->save($this->request->data)) {
+        $this->redirect('/');
       }
     }
   }

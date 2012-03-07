@@ -29,6 +29,8 @@
 Router::connect('/', array('controller' => 'questions', 'action' => 'index'));
 Router::connect('/register', array('controller' => 'users',
   'action' => 'register'));
+Router::connect('/login', array('controller' => 'users',
+  'action' => 'login'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

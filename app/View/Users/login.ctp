@@ -1,8 +1,14 @@
 <br />
-<?php echo $this->Form->create('Login', array('action' => 'login_user')); ?>
-<?php echo $this->Form->input('username');?><br />
-<?php echo $this->Form->input('password');?><br />
-</table>
+<?php
+  echo $this->Form->create('Login', array('action' => 'login'));
 
-<?php echo $this->Form->end('Login'); ?>
+  echo $this->Form->input('username');
+  echo "<br />";
+  echo $this->Form->input('password');
+  echo "<br />";
 
+  echo $this->Form->end('Login');
+  echo "<br />";
+
+  $this->Html->link('Register', array('action' => 'register'));
+?>

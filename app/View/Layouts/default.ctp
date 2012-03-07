@@ -39,9 +39,9 @@
   <div id="container">                                                           
     <div id="header">                                                            
       <div id="userinfo">                                                        
-      <?php echo $this->Html->link('Login', array('url' => '/login')); ?>        
+      <?php echo $this->Html->link('Login', '/login'); ?>        
       |                                                                          
-      <?php echo $this->Html->link('Sign Up', array('url' => '/register')); ?>
+      <?php echo $this->Html->link('Sign Up', '/register'); ?>
       </div>                                                                     
     </div>                                                                       
     <div id="content">                                                           

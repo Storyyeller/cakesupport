@@ -39,9 +39,14 @@
   <div id="container">                                                           
     <div id="header">                                                            
       <div id="userinfo">                                                        
-      <?php echo $this->Html->link('Login', '/login'); ?>        
-      |                                                                          
-      <?php echo $this->Html->link('Sign Up', '/register'); ?>
+      <?php if($this->Session->read('uid')) { ?>
+      Welcome <?php echo $this->Session->read('uid') ?>
+      [<a href="/logout">Logout</a>]
+      <?php } else { ?>
+      <a href="/login">Login</a>
+      |
+      <a href="/register">Sign Up</a>
+      <?php } ?>
       </div>                                                                     
     <ul id="nav">
       <li class="spacer"></li>

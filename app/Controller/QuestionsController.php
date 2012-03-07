@@ -19,6 +19,25 @@ class QuestionsController extends AppController {
     }
   }
 
+  public function edit($id = null) {
+    $this->Question->id = $id;
+    if($this->request->is('get')) {
+      $q = $this->Question->read();
+      $this->set('question', $q);
+      if($q == null) {
+        $this->Session->setFlash('That question does not exist or has been deleted');
+        $this->redirect('/');
+      }
+    } else {
+      if($this->Question->save($this->request->data)) {
+        $this->Session->setFlash('Your post has been updated');
+        $this->redirect('/');
+      } else {
+        $this->Session->setFlash('Unable to update your post');
+      }
+    }
+  }
+
   public function remove($id = null) {
     $this->Question->id = $id;
     $q = $this->Question->read();
@@ -47,7 +66,6 @@ class QuestionsController extends AppController {
       $this->redirect('/login');
     } else {
       if($this->request->is('post')) {
-        print_r($this->request->data);
         $this->request->data['Question']['user_id'] = $this->Session->read('User.id');
         if($this->Question->save($this->request->data)) {
           $this->Session->setFlash('Your question has been added');

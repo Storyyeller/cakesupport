@@ -14,6 +14,23 @@ class QuestionsController extends AppController {
     $this->set('question', $this->Question->read());
   }
 
+  public function remove($id = null) {
+    $this->Question->id = $id;
+    $q = $this->Question->read();
+    if($q) {
+      if($q['User']['id'] != $this->Session->read('User.id')) {
+        $this->Session->setFlash('This post does not belong to you');
+        $this->redirect(array('action' => 'view');
+      } else {
+        $this->Session->setFlash('Post deleted');
+        $this->redirect('/');
+      }
+    } else {
+      $this->Session->setFlash('No such question exists');
+        $this->redirect('/');
+    }
+  }
+
   public function add() {
     if(!(CakeSession::read('User.username'))) {
       $this->Session->setFlash("You must be logged in to post a question");

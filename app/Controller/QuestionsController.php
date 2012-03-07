@@ -5,7 +5,8 @@ class QuestionsController extends AppController {
   public $uses = array('Question', 'User');
 
   public function index() {
-    $this->set('questions', $this->Question->find('all'));
+    $this->set('questions', $this->Question->find('all',
+            array('order' => array('id desc')));
   }
 
   public function view($id = null) {

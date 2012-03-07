@@ -14,16 +14,19 @@ class QuestionsController extends AppController {
     $q = $this->Question->read();
     $this->set('question', $q);
     if($q == null) {
-      $this->Session->setFlash('That question does not exist or has been deleted');
+      $this->Session->setFlash('This question does not exist or has been deleted');
       $this->redirect('/');
     }
   }
 
   public function edit($id = null) {
     $this->Question->id = $id;
+    if($this->Question->read() == null) {
+      $this->Session->setFlash('This question does not exist or has been deleted');
+      $this->redirect('/');
+    }
     if($this->request->is('get')) {
-      $q = $this->Question->read();
-      $this->set('question', $q);
+      $this->request->data = $this->Question->read();
       if($q == null) {
         $this->Session->setFlash('That question does not exist or has been deleted');
         $this->redirect('/');

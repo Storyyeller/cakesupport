@@ -1,6 +1,6 @@
 <h1>Questions</h1>
 
-<?php echo $this->Html->link('Add Post', array('action' => 'add')); ?>
+<?php echo $this->Html->link('Post a Question', array('action' => 'add')); ?>
 <table>
 <tr>
 <th>Id</th>

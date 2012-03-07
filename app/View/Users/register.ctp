@@ -1,11 +1,16 @@
 <br />
-<?php echo $this->Form->create('User', array('action' => 'register')); ?>
-<?php echo $this->Form->input('username');?><br />
-<?php echo $this->Form->input('password');?><br />
-<?php echo $this->Form->input('email');?><br />
-<?php echo $this->Form->input('first_name');?><br />
-<?php echo $this->Form->input('last_name');?><br />
-</table>
+<?php
+  echo $this->Form->create('User', array('action' => 'register'));
 
-<?php echo $this->Form->end('Create Account'); ?>
+  echo $this->Form->input('username');
+  echo $this->Form->input('password');
+  echo $this->Form->input('email');
+  echo $this->Form->input('first_name');
+  echo $this->Form->input('last_name');
+
+  echo $this->Form->end('Create Account');
+
+  echo "Already have an account?";
+  echo $this->Html->link('Login here!', array('action' => 'register'));
+?>
 

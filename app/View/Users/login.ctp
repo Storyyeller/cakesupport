@@ -10,5 +10,5 @@
   echo $this->Form->end('Login');
   echo "<br />";
 
-  $this->Html->link('Register', array('action' => 'register'));
+  echo $this->Html->link('Need to register?', array('action' => 'register'));
 ?>

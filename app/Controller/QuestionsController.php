@@ -13,6 +13,7 @@ class QuestionsController extends AppController {
     $this->Question->id = $id;
     $q = $this->Question->read();
     $this->set('question', $q);
+    $this->request->data['Answer']['question_id'] = $id;
     if($q == null) {
       $this->Session->setFlash('This question does not exist or has been deleted');
       $this->redirect('/');

@@ -1,5 +1,5 @@
 <?php
-class Comment extends AppModel {
+class Answer extends AppModel {
   public $name = 'Answer';
 
   public $belongsTo = array(

@@ -13,7 +13,7 @@ class Question extends AppModel {
     'QuestionComment' => array(
       'className' => 'Comment',
       'foreignKey' => 'question_id',
-      'order' => 'Comment.created DESC',
+      'order' => 'QuestionComment.created DESC',
       'dependent' => true
     )
   );

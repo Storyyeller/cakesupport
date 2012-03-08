@@ -19,8 +19,8 @@ by: <?php echo $question['User']['username']; ?> <br />
 ?>
 </div>
 <?php
-  echo $this->Form->create('Question', array('action' => 'answer'));
-  echo $this->Form->input('id', array('type' => 'hidden'));
+  echo $this->Form->create('Answer', array('action' => 'post'));
+  echo $this->Form->input('question_id', array('type' => 'hidden'));
   echo $this->Form->input('body', array('class' => 'answer'));
   echo $this->Form->end('Answer');
 ?>

@@ -2,7 +2,7 @@
 class QuestionsController extends AppController {
   public $name = 'Questions';
   public $helpers = array('Html', 'Form');
-  public $uses = array('Question', 'User');
+  public $uses = array('Question', 'User', 'Answer');
 
   public function index() {
     $this->set('questions', $this->Question->find('all',

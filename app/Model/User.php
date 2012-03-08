@@ -3,10 +3,10 @@ class User extends AppModel {
   public $name = 'User';
 
   public $hasMany = array(
-    'UserComment' => array(
-      'className' => 'Comment',
+    'UserAnswer' => array(
+      'className' => 'Answer',
       'foreignKey' => 'user_id',
-      'order' => 'Comment.created DESC',
+      'order' => 'UserAnswer.created DESC',
       'dependent' => true
     )
   );
@@ -28,7 +28,10 @@ class User extends AppModel {
         'rule' => array('minLength', '8'),
         'message' => 'Must be at least 8 characters long',
       ),
-      'email' => 'email',
+      'email' => array(
+        'rule' => 'email',
+        'message' => 'Must provide a valid email address'
+      ),
       'first_name' => array(
         'rule' => 'notEmpty',
         'message' => 'Cannot be left blank'

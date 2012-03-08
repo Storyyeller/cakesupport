@@ -10,10 +10,10 @@ class Question extends AppModel {
   );
 
   public $hasMany = array(
-    'QuestionComment' => array(
-      'className' => 'Comment',
+    'QuestionAnswer' => array(
+      'className' => 'Answer',
       'foreignKey' => 'question_id',
-      'order' => 'QuestionComment.created DESC',
+      'order' => 'QuestionAnswer.created DESC',
       'dependent' => true
     )
   );

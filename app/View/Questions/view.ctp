@@ -19,16 +19,13 @@ by: <?php echo $question['User']['username']; ?> <br />
 ?>
 </div>
 <?php
-  echo $this->Form->create('Question', array('action' => 'comment'));
+  echo $this->Form->create('Question', array('action' => 'answer'));
   echo $this->Form->input('id', array('type' => 'hidden'));
-  echo $this->Form->input('body', array('class' => 'questioncomment');
-  echo $this->Form->end('Add Comment');
+  echo $this->Form->input('body', array('class' => 'answer'));
+  echo $this->Form->end('Answer');
 ?>
 <br />
-Comments:
+Answers:
 <br />
-<?php foreach ($question['Comment'] as $c) ?>
-
-<?php endforeach; ?>
 
 </div>

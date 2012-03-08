@@ -19,6 +19,10 @@ class QuestionsController extends AppController {
     }
   }
 
+  public function answer() {
+    print_r($this->request->data);
+  }
+
   public function edit($id = null) {
     $this->Question->id = $id;
     if($this->Question->read() == null) {

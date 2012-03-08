@@ -18,6 +18,12 @@ class QuestionsController extends AppController {
       $this->Session->setFlash('This question does not exist or has been deleted');
       $this->redirect('/');
     }
+
+    foreach ($q['QuestionAnswer'] as $ans):
+      $this->User->id = $ans['user_id'];
+      $user = $this->User->read();
+      $ans['username'] = $user['username'];
+    endforeach;
   }
 
   public function answer() {

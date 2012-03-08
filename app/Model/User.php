@@ -2,6 +2,15 @@
 class User extends AppModel {
   public $name = 'User';
 
+  public $hasMany = array(
+    'UserComment' => array(
+      'className' => 'Comment',
+      'foreignKey' => 'user_id',
+      'order' => 'Comment.created DESC',
+      'dependent' => true
+    )
+  );
+
   public $validate = array(
       'username' => array(
         'alphaNumeric' => array(
